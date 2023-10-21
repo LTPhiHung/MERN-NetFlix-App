@@ -1,20 +1,27 @@
+import { Link, useLocation } from "react-router-dom";
 import "./watch.scss"
 import { ArrowBackOutlined } from '@mui/icons-material'
 
 const Watch = () => {
+  const location = useLocation();
+  console.log(location)
+  const movie = location.state.movie;
+
   return (
     <div className="watch">
+      <Link to="/">
         <div className="back">
             <ArrowBackOutlined />
             Home
         </div>
-        <video
-            className="video"
-            autoPlay
-            progress
-            controls
-            src="https://live-par-2-abr.livepush.io/vod/bigbuckbunnyclip.mp4"
-        />
+      </Link>
+      <video
+          className="video"
+          autoPlay
+          progress
+          controls
+          src={movie.video}
+      />
     </div>
   )
 }
