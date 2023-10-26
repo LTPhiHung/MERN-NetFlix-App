@@ -1,7 +1,6 @@
 import { useRef, useState } from 'react'
 import "./list.scss";
-import ArrowBackIosOutlinedIcon from '@mui/icons-material/ArrowBackIosOutlined';
-import ArrowForwardIosOutlinedIcon from '@mui/icons-material/ArrowForwardIosOutlined';
+import { ArrowBackIosOutlined, ArrowForwardIosOutlined} from '@mui/icons-material';
 import ListItem from '../listItem/ListItem';
 
 const List = ({list}) => {
@@ -28,7 +27,7 @@ const List = ({list}) => {
     <div className='list'>
       <span className="listTitle">{list.title}</span>
       <div className="wrapper">
-        <ArrowBackIosOutlinedIcon   
+        <ArrowBackIosOutlined   
           className="sliderArrow left" 
           onClick={() => handleClick("left")} 
           style={{display: !isMoved && "none"}}
@@ -38,7 +37,7 @@ const List = ({list}) => {
             <ListItem index={i} item={item} key={i} />
           ))}
         </div>
-        <ArrowForwardIosOutlinedIcon className="sliderArrow right" onClick={() => handleClick("right")} />
+        <ArrowForwardIosOutlined className="sliderArrow right" onClick={() => handleClick("right")} />
       </div>
     </div>
   )

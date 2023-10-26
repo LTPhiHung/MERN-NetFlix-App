@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import "./featured.scss";
-import PlayArrowIcon from '@mui/icons-material/PlayArrow';
-import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
+import { PlayArrow, InfoOutlined } from '@mui/icons-material';
 import axios from 'axios';
 
 const Featured = ({type}) => {
@@ -60,11 +59,11 @@ const Featured = ({type}) => {
                 <span className="desc">{content.desc}</span>
                 <div className="buttons">
                     <button className="play">
-                        <PlayArrowIcon/>
+                        <PlayArrow/>
                         <span>Play</span>
                     </button>
                     <button className="more">
-                        <InfoOutlinedIcon/>
+                        <InfoOutlined/>
                         <span>Info</span>
                     </button>
                 </div>

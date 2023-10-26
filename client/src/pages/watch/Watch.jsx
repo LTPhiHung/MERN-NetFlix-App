@@ -4,7 +4,6 @@ import { ArrowBackOutlined } from '@mui/icons-material'
 
 const Watch = () => {
   const location = useLocation();
-  console.log(location)
   const movie = location.state.movie;
 
   return (

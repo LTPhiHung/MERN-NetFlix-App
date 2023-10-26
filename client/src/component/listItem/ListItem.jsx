@@ -1,8 +1,7 @@
 import "./listItem.scss"
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import AddIcon from '@mui/icons-material/Add';
-import ThumbUpAltOutlinedIcon from '@mui/icons-material/ThumbUpOutlined';
-import ThumbDownAltOutlinedIcon from '@mui/icons-material/ThumbDownAltOutlined';
+import { ThumbUpAltOutlined, ThumbDownAltOutlined} from '@mui/icons-material';
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from 'react-router-dom';
@@ -50,8 +49,8 @@ const ListItem = ({index, item}) => {
                             <div className="icons">
                                 <PlayArrowIcon className="icon"/>
                                 <AddIcon className="icon"/>
-                                <ThumbUpAltOutlinedIcon className="icon"/>
-                                <ThumbDownAltOutlinedIcon className="icon"/>
+                                <ThumbUpAltOutlined className="icon"/>
+                                <ThumbDownAltOutlined className="icon"/>
                             </div>
                             <div className="itemInfoTop">
                                 <span>{movie.duration}</span>
