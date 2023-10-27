@@ -3,7 +3,7 @@ import "./featured.scss";
 import { PlayArrow, InfoOutlined } from '@mui/icons-material';
 import axios from 'axios';
 
-const Featured = ({type}) => {
+const Featured = ({type, setGenre}) => {
 
     const [content, setContent] = useState({});
 
@@ -13,7 +13,7 @@ const Featured = ({type}) => {
                 const res = await axios(`/movies/random?type=${type}`, {
                     headers: {
                         token : 
-                        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MmVjYTRjZGEwNWIwMjEwNWJkOGJiYSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY5NzYwMTcwOCwiZXhwIjoxNjk4MDMzNzA4fQ.qEClZnW03t6W0Pekh95LeDqB28eqQjzMOS0Cx7cVE0A"
+                        "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
                     },
                 });
                 setContent(res.data[0])
@@ -29,7 +29,7 @@ const Featured = ({type}) => {
             {type && (
                 <div className="category">
                     <span>{type === "movies" ? "Movies": "Series"}</span>
-                    <select name="genre" id="genre">
+                    <select name="genre" id="genre" onChange={e => setGenre(e.target.value)}>
                         <option>Genre</option>
                         <option value="adventure">Adventure</option>
                         <option value="comedy">comedy</option>

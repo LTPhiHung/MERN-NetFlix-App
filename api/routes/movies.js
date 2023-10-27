@@ -62,16 +62,12 @@ router.delete("/:id", verify, async (req, res) => {
 // GET
 
 router.get("/find/:id", verify, async (req, res) => {
-    if(req.user.isAdmin) {
-        try {
-            const movie = await Movie.findById(req.params.id);
+    try {
+        const movie = await Movie.findById(req.params.id);
 
-            res.status(200).json(movie);
-        } catch(err) {
-            res.status(500).json(err);
-        }
-    } else {
-        res.status(403).json("You are not allowed!")
+        res.status(200).json(movie);
+    } catch(err) {
+        res.status(500).json(err);
     }
 });
 

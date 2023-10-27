@@ -9,7 +9,6 @@ router.post("/", verify, async (req, res) => {
         const newList = new List(req.body);
 
         try {
-            // req.user.id same req,params.id
             const saveList = await newList.save();
 
             res.status(201).json(saveList);
@@ -26,7 +25,7 @@ router.post("/", verify, async (req, res) => {
 router.delete("/:id", verify, async (req, res) => {
     if(req.user.isAdmin) {
         try {
-            await newList.findByIdAndDelete(req.params.id);
+            await List.findByIdAndDelete(req.params.id);
 
             res.status(200).json("The list has been deleted...");
         } catch(err) {

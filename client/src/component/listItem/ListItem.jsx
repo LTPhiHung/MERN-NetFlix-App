@@ -19,7 +19,7 @@ const ListItem = ({index, item}) => {
                     {
                     headers: {
                         token : 
-                        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MmVjYTRjZGEwNWIwMjEwNWJkOGJiYSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY5NzYwMTcwOCwiZXhwIjoxNjk4MDMzNzA4fQ.qEClZnW03t6W0Pekh95LeDqB28eqQjzMOS0Cx7cVE0A"
+                        "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
                     },
                 });
                 setMovie(res.data);

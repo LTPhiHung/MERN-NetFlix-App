@@ -1,3 +1,4 @@
+@import "../../App.scss";
 .featured {
     height: 90vh;
     position: relative;
@@ -19,6 +20,7 @@
             color: white;
             margin-left: 20px;
             padding: 5px;
+            text-transform: capitalize;
 
             option {
                 text-transform: capitalize;
@@ -36,17 +38,22 @@
         width: 35%;
         position: absolute;
         left: 50px;
-        bottom: 100px;
+        bottom: 60px;
         color: white;
         display: flex;
         flex-direction: column;
 
         img {
-            width: 400px;
+            width: 60vw;
+            margin-top: 100px;
         }
 
         .desc {
             margin: 20px 0px;
+
+            @include mobile {
+                width: 60vw;
+            }
         }
 
         .buttons {
