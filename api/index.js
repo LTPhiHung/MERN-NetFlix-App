@@ -7,7 +7,6 @@ const userRoute = require("./routes/users");
 const movieRoute = require("./routes/movies");
 const listRoute = require("./routes/lists");
 
-
 dotenv.config();
 
 mongoose
